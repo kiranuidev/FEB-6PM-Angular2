@@ -4,6 +4,7 @@ import { environment } from './environments/environment';
 
 //Entry Module.
 import { AppModule } from './app/app.module';
+//import {CustomModule} from './custom/custom.module';
 
 if (environment.production) {
   enableProdMode();

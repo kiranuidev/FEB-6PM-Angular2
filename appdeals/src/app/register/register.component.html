@@ -1,1 +1,57 @@
-<h1>Register</h1>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="email" [(ngModel)]="user.email" placeholder="Enter email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">User Name:</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [(ngModel)]="user.username" placeholder="User Name">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Date of Birth</label>
+        <div class="col-sm-4">
+     
+ 
+<div>
+ 
+  
+  <div style="display:inline-block; min-height:290px;">
+    <datepicker [(ngModel)]="user.dob" [showWeeks]="true" ></datepicker>
+  </div>
+ 
+ 
+  
+ 
+</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Countries</label>
+        <div class="col-sm-4">
+            <select class="form-control" [(ngModel)]="selectedCountry" (change) = "countrySelected()">
+                <option *ngFor="let country  of countries" value={{country.code}}>
+                    {{country.name}}
+                    </option>
+</select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Gender</label>
+        <div class="col-sm-4">
+            <input type="radio" [(ngModel)]="user.gender" value="M" name="gender">Male
+            <input type="radio" [(ngModel)]="user.gender" value="F" name="gender">Female
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">I Agree Terms</label>
+        <div class="col-sm-4">
+            <input type="checkbox" [(ngModel)]="user.terms">
+        </div>
+    </div>
+
+</div>
+<button class="btn btn-primary" (click)="create()">Add</button>

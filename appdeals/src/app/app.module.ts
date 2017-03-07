@@ -10,15 +10,19 @@ import { HttpModule } from '@angular/http';
 import {HeaderComponent} from './header/header.component';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
-
+import {ProductsComponent} from "./products/products.component"
 import { AppComponent } from './app.component';
+//registering the service globally.
+
+import {RegisterService} from "./register/register.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     DatepickerModule.forRoot()
   ],
-  providers: [],
+  //Registering the service at the module level.
+  providers: [RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

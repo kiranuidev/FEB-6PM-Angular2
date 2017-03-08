@@ -17,7 +17,8 @@ export class ProductsComponent {
     getProducts() {
         this.productsSvc.getProducts()
             .subscribe(res => {
-                this.products = res.data;
+                this.products = res;
+                console.log(res);
             });
     }
 

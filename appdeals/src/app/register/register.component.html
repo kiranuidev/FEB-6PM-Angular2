@@ -11,28 +11,28 @@
             <input type="text" class="form-control" [(ngModel)]="user.username" placeholder="User Name">
         </div>
     </div>
-     <div class="form-group">
-        <label class="control-label col-sm-2" for="email">Date of Birth</label>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Password</label>
         <div class="col-sm-4">
-     
- 
-<div>
- 
-  
-  <div style="display:inline-block; min-height:290px;">
-    <datepicker [(ngModel)]="user.dob" [showWeeks]="true" ></datepicker>
-  </div>
- 
- 
-  
- 
-</div>
+            <input type="text" class="form-control" [(ngModel)]="user.password" placeholder="Age">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Age</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [(ngModel)]="user.age" placeholder="Age">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Phone</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" [(ngModel)]="user.phone" placeholder="Age">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-sm-2" for="email">Countries</label>
         <div class="col-sm-4">
-            <select class="form-control" [(ngModel)]="selectedCountry" (change) = "countrySelected()">
+            <select class="form-control" [(ngModel)]="selectedCountry" (change)="countrySelected()">
                 <option *ngFor="let country  of countries" value={{country.code}}>
                     {{country.name}}
                     </option>

@@ -27,7 +27,10 @@ export class RegisterComponent {
     //countries = [{ name: "India", code: "IN" }, { name: "United States", code: "USA" },]
     countries = this.registerSvc.getCountries();
     create() {
-        console.log(this.user);
+        this.registerSvc.registerUser(this.user)
+            .subscribe((res) => {
+                console.log(res);
+            })
     }
     countrySelected() {
         console.log(this.selectedCountry);

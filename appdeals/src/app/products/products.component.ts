@@ -13,18 +13,30 @@ export class ProductsComponent {
     constructor(private productsSvc: ProductsService) {
         this.getProducts();
     }
+    product={};
     products:any
     getProducts() {
         this.productsSvc.getProducts()
             .subscribe(res => {
                 this.products = res;
                 console.log(res);
-            });
+            },
+            err=>{
+                console.log(err);
+            })
     }
 
 
-    addProduct(item) {
-        this.productsSvc.addProduct();
+    addProduct() {
+        this.productsSvc.addProduct(this.product)
+        .subscribe(res => {
+               // this.products = res;
+                console.log(res);
+            },
+            err=>{
+                console.log(err);
+            })
+
     }
     search(query) {
         this.productsSvc.searchProduct();

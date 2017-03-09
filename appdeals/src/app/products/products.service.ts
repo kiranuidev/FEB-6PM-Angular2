@@ -9,7 +9,7 @@ export class ProductsService{
   constructor(private http:Http){
 
   }
-//query="/v1/search?query=ipod&format=json&apiKey=9sp3mm93hkvjbfuv6bc5fex8"
+  
   getProducts():Observable<any>{
   //  var url = "/wallmart"+this.query;
     return this.http.get("/api/products")
@@ -17,8 +17,10 @@ export class ProductsService{
     .catch((error)=>error.json());
      //return [{name:"iPhone",model:"7s"}]
   }
-  addProduct(){
-
+  addProduct(item){
+  return this.http.post ("/api/products/create",item)
+  .map(res=> res.json() )
+    .catch((error)=>error.json());
   }
   searchProduct(){
       

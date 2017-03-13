@@ -15,6 +15,7 @@ export class ProductsComponent {
     }
     product={};
     products:any
+    itemSelected={}
     getProducts() {
         this.productsSvc.getProducts()
             .subscribe(res => {
@@ -40,5 +41,10 @@ export class ProductsComponent {
     }
     search(query) {
         this.productsSvc.searchProduct();
+    }
+
+    select(item){
+        this.itemSelected = item;
+        console.log(this.itemSelected);
     }
 }

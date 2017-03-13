@@ -12,6 +12,7 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {ProductsComponent} from "./products/products.component"
 import { AppComponent } from './app.component';
+import { ProductDetails } from './product-details/product-details.component';
 //registering the service globally.
 
 import {RegisterService} from "./register/register.service";
@@ -23,7 +24,7 @@ import {RegisterService} from "./register/register.service";
     LoginComponent,
     RegisterComponent,
     ProductsComponent
-  ],
+,ProductDetails  ],
   imports: [
     BrowserModule,
     FormsModule,

@@ -11,7 +11,14 @@ export class HeaderComponent{
 
     }
     contentType="";
+    cartItems=0;
     loadContent(item){
         this.contentType=item;
+    }
+    increment(data){
+        this.cartItems++;
+    }
+    decrement(data){
+        this.cartItems--;
     }
 }

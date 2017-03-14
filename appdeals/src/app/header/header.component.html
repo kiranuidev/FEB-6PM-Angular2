@@ -20,6 +20,7 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Cart {{cartItems}}</a></li>
                 <li (click)="loadContent('login')"><a href="#">Login</a></li>
                 <li (click)="loadContent('register')"><a href="#">Register</a></li>
                 <li (click)="loadContent('products')"><a href="#">Products</a></li>
@@ -38,5 +39,6 @@
     <appdeals-register></appdeals-register>
 </div>
 <div *ngIf="contentType=='products'">
-    <appdeals-products></appdeals-products>
+    <!--4. once the user emits the updateCart listen to the event in the hmtl -->
+    <appdeals-products (updateCart)="increment($event)" (removeFromCart)="decrement($event)"></appdeals-products>
 </div>

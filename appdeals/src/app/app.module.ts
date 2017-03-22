@@ -16,6 +16,9 @@ import { ProductDetails } from './product-details/product-details.component';
 //registering the service globally.
 
 import {RegisterService} from "./register/register.service";
+import { BlinkerDirective } from './blinker.directive';
+import { StylishButtonDirective } from './stylish-button.directive';
+import { NumbersDirective } from './numbers.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,7 @@ import {RegisterService} from "./register/register.service";
     LoginComponent,
     RegisterComponent,
     ProductsComponent
-,ProductDetails  ],
+,ProductDetails, BlinkerDirective, StylishButtonDirective, NumbersDirective  ],
   imports: [
     BrowserModule,
     FormsModule,
